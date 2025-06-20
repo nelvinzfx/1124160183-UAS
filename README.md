@@ -22,6 +22,8 @@
 
 - [Tentang Aplikasi](#-tentang-aplikasi)
 - [Fitur Utama](#-fitur-utama)
+- [Screenshots](#-screenshots)
+- [Demo & Links](#-demo--links)
 ---
 
 ## 🚀 Tentang Aplikasi
@@ -82,3 +84,22 @@
 - **Keyboard Shortcuts**: Dukungan keyboard shortcuts
 
 ---
+
+
+## 📸 Screenshots
+
+### Desktop Views
+![Desktop Screenshot](Screenshot_1.png)
+
+### Mobile Views
+![Mobile Screenshot](Screenshot_2.png)
+
+---
+
+## 🔗 Demo & Links
+
+### Live Demo
+- Link : https://example.com
+
+---
+
