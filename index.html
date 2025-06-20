@@ -3,49 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pembayaran Lengkap</title>
+    <title>Sistem Pembayaran Lengkap - Enhanced</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="tailwind.config.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="tailwind.config.js"></script>
 </head>
-<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen py-8">
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen py-6 transition-colors duration-300">
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-xl p-6 text-center">
-            <i class="fas fa-spinner fa-spin text-3xl text-blue-600 mb-4"></i>
-            <p class="text-gray-600">Memproses pembayaran...</p>
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
+            <i class="fas fa-spinner fa-spin text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
+            <p class="text-gray-600 dark:text-gray-300">Memproses pembayaran...</p>
         </div>
     </div>
 
     <!-- Notification Container -->
     <div id="notificationContainer" class="fixed top-4 right-4 z-40 space-y-2"></div>
 
-    <div class="container mx-auto max-w-6xl px-4">
-        <!-- Enhanced Header -->
-        <header class="text-center mb-8 animate-fade-in">
-            <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                <i class="fas fa-credit-card mr-3"></i>Sistem Pembayaran Pro
-            </h1>
-            <p class="text-gray-600 text-lg">Kelola transaksi dan pembayaran dengan teknologi modern</p>
-            <div class="mt-4 flex justify-center space-x-6 text-sm text-gray-500">
-                <span><i class="fas fa-shield-alt mr-1"></i>Aman & Terpercaya</span>
-                <span><i class="fas fa-bolt mr-1"></i>Proses Cepat</span>
-                <span><i class="fas fa-mobile-alt mr-1"></i>Responsive Design</span>
+    <div class="container mx-auto max-w-7xl px-4">
+        <!-- Enhanced Professional Header with Images -->
+        <header class="mb-10">
+            <!-- Top Navigation Bar -->
+            <nav class="flex items-center justify-between py-4 px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 mb-6">
+                <!-- Left Side: Campus Image & Brand -->
+                <div class="flex items-center space-x-4">
+                    <!-- Campus Image -->
+                    <div class="campus-image-container">
+                        <img 
+                            src="https://direktori.lldikti4.id/uploads/logo_pt/042018.png" 
+                            alt="Global University Logo"
+                            class="w-12 h-12 rounded-xl object-cover border-2 border-gray-200 dark:border-gray-600 shadow-sm hover:shadow-md transition-shadow duration-300"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iMTIiIGZpbGw9IiMzQjgyRjYiLz4KPHN2ZyB4PSIxMiIgeT0iMTIiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAzTDEgOUwxMiAxNUwyMyA5TDEyIDNaTTUgMTMuMThWMTcuMThMMTIgMjFMMTkgMTcuMThWMTMuMThMMTIgMTdMNSAxMy4xOFoiLz4KPHN2Zz4KPHN2Zz4='">
+                    </div>
+                    
+                    <!-- Brand Info -->
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800 dark:text-white">PaymentPro</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Modern Payment System</p>
+                    </div>
+                </div>
+
+                <!-- Center: Navigation Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#dashboard" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200 flex items-center space-x-2">
+                        <i class="fas fa-tachometer-alt text-sm"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#transactions" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200 flex items-center space-x-2">
+                        <i class="fas fa-history text-sm"></i>
+                        <span>Transaksi</span>
+                    </a>
+                    <a href="#reports" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200 flex items-center space-x-2">
+                        <i class="fas fa-chart-bar text-sm"></i>
+                        <span>Laporan</span>
+                    </a>
+                </div>
+
+                <!-- Right Side: Controls & Profile -->
+                <div class="flex items-center space-x-4">
+                    <!-- Status Indicator -->
+                    <div class="hidden sm:flex items-center space-x-2 px-3 py-1.5 bg-green-100 dark:bg-green-900/30 rounded-full">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-medium text-green-700 dark:text-green-400">Online</span>
+                    </div>
+
+                    <!-- Dark Mode Toggle -->
+                    <button 
+                        id="darkModeToggle"
+                        class="relative group flex items-center justify-center w-11 h-11 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 border border-gray-300 dark:border-gray-600 shadow-sm hover:shadow-md"
+                        title="Toggle Dark/Light Mode"
+                    >
+                        <i id="darkModeIcon" class="fas fa-moon text-gray-700 dark:text-yellow-400 text-base transition-all duration-300 group-hover:scale-110"></i>
+                        <!-- Tooltip -->
+                        <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                            <span id="tooltipText">Dark Mode</span>
+                            <div class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-800 dark:bg-gray-200 rotate-45"></div>
+                        </div>
+                    </button>
+
+                    <!-- Profile Image -->
+                    <div class="profile-image-container">
+                        <img 
+                            src="assets/icon/profile.gif" 
+                            alt="User Profile"
+                            class="w-11 h-11 rounded-full object-cover border-2 border-gray-300 dark:border-gray-600 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHZpZXdCb3g9IjAgMCA0NCA0NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjIiIGN5PSIyMiIgcj0iMjIiIGZpbGw9IiM2MzcxODEiLz4KPHN2ZyB4PSIxMCIgeT0iMTAiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAyQzEzLjEgMiAxNCAyLjkgMTQgNEMxNCA1LjEgMTMuMSA2IDEyIDZDMTAuOSA2IDEwIDUuMSAxMCA0QzEwIDIuOSAxMC45IDIgMTIgMlpNMjEgOVYyMkgxNVYxM0g5VjIySDNWOUg5SDIxWiIvPgo8L3N2Zz4KPHN2Zz4='"
+                        >
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button 
+                        id="mobileMenuToggle"
+                        class="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 border border-gray-300 dark:border-gray-600"
+                    >
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="lg:hidden hidden bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 p-4 mb-6">
+                <div class="space-y-3">
+                    <!-- Mobile Profile Header -->
+                    <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl mb-4">
+                        <img 
+                            src="assets/icon/profile.gif" 
+                            alt="User Profile"
+                            class="w-20 h-20 rounded-full object-cover border-2 border-gray-300 dark:border-gray-600"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2MzcxODEiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTIgMkMxMy4xIDIgMTQgMi45IDE0IDRDMTQgNS4xIDEzLjEgNiAxMiA2QzEwLjkgNiAxMCA1LjEgMTAgNEMxMCAyLjkgMTAuOSAyIDEyIDJaTTIxIDlWMjJIMTVWMTNIOVYyMkgzVjlIOUgyMVoiLz4KPC9zdmc+CjxzdmcKPHN2Zz4='"
+                        >
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">Admin User</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Administrator</p>
+                        </div>
+                    </div>
+
+                    <a href="#dashboard" class="mobile-nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i class="fas fa-tachometer-alt text-blue-600 dark:text-blue-400 w-5"></i>
+                        <span class="text-gray-700 dark:text-gray-300 font-medium">Dashboard</span>
+                    </a>
+                    <a href="#transactions" class="mobile-nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i class="fas fa-history text-blue-600 dark:text-blue-400 w-5"></i>
+                        <span class="text-gray-700 dark:text-gray-300 font-medium">Transaksi</span>
+                    </a>
+                    <a href="#reports" class="mobile-nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i class="fas fa-chart-bar text-blue-600 dark:text-blue-400 w-5"></i>
+                        <span class="text-gray-700 dark:text-gray-300 font-medium">Laporan</span>
+                    </a>
+                    
+                    <!-- Mobile Profile Actions -->
+                    <div class="border-t border-gray-200 dark:border-gray-600 pt-3 mt-3">
+                        <a href="#profile" class="mobile-nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-user text-blue-600 dark:text-blue-400 w-5"></i>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Profil</span>
+                        </a>
+                        <a href="#settings" class="mobile-nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-cog text-blue-600 dark:text-blue-400 w-5"></i>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Pengaturan</span>
+                        </a>
+                        <a href="#logout" class="mobile-nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200">
+                            <i class="fas fa-sign-out-alt text-red-600 dark:text-red-400 w-5"></i>
+                            <span class="text-red-600 dark:text-red-400 font-medium">Keluar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Hero Section with Institution Branding -->
+            <div class="text-center py-8 px-6 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 dark:from-blue-600/20 dark:via-purple-600/20 dark:to-indigo-600/20 rounded-3xl border border-blue-200/30 dark:border-blue-700/30 backdrop-blur-sm">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Institution Header -->
+                    <div class="flex items-center justify-center space-x-4 mb-6">
+                        <img 
+                            src="assets/icon/global-institute.png" 
+                            alt="Global Institute"
+                            class="w-16 h-16 rounded-2xl object-cover border-2 border-white dark:border-gray-700 shadow-lg"
+                            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMzQjgyRjYiLz4KPHN2ZyB4PSIxNiIgeT0iMTYiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAzTDEgOUwxMiAxNUwyMyA5TDEyIDNaTTUgMTMuMThWMTcuMThMMTIgMjFMMTkgMTcuMThWMTMuMThMMTIgMTdMNSAxMy4xOFoiLz4KPHN2Zz4KPHN2Zz4='"
+                        >
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Global Institute</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Excellence in Education & Technology</p>
+                        </div>
+                    </div>
+
+                    <!-- Main Title -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                            Sistem Pembayaran
+                        </span>
+                        <br>
+                        <span class="text-gray-800 dark:text-white">
+                            Professional
+                        </span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+                        Kelola transaksi dan pembayaran dengan teknologi modern yang aman, cepat, dan mudah digunakan
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <div class="hero-badge flex items-center space-x-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-full border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
+                            <i class="fas fa-shield-alt text-green-500 text-sm"></i>
+                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Keamanan Tinggi</span>
+                        </div>
+                        <div class="hero-badge flex items-center space-x-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-full border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
+                            <i class="fas fa-bolt text-yellow-500 text-sm"></i>
+                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Proses Instan</span>
+                        </div>
+                        <div class="hero-badge flex items-center space-x-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-full border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
+                            <i class="fas fa-mobile-alt text-blue-500 text-sm"></i>
+                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Multi Platform</span>
+                        </div>
+                        <div class="hero-badge flex items-center space-x-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 rounded-full border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
+                            <i class="fas fa-chart-line text-purple-500 text-sm"></i>
+                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Real-time Analytics</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                        <div class="stats-card bg-white/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="headerTotalTransactions">0</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Total Transaksi</div>
+                        </div>
+                        <div class="stats-card bg-white/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-green-600 dark:text-green-400" id="headerTotalRevenue">Rp 0</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Total Pendapatan</div>
+                        </div>
+                        <div class="stats-card bg-white/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">24/7</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Aktif Online</div>
+                        </div>
+                        <div class="stats-card bg-white/50 dark:bg-gray-800/50 rounded-2xl p-4 border border-gray-200/30 dark:border-gray-700/30 backdrop-blur-sm">
+                            <div class="text-2xl font-bold text-orange-600 dark:text-orange-400">99.9%</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Uptime</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
+        <!-- Rest of the content remains the same from previous version -->
         <div class="grid lg:grid-cols-3 gap-8">
             <!-- Enhanced Form Pembayaran -->
-            <div class="lg:col-span-2 bg-white rounded-2xl shadow-xl p-8 animate-slide-up">
+            <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 animate-slide-up transition-colors duration-300">
                 <div class="flex items-center mb-8">
                     <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
                         <i class="fas fa-credit-card text-white text-xl"></i>
                     </div>
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-800">Form Pembayaran</h2>
-                        <p class="text-gray-500">Isi data pembayaran dengan lengkap</p>
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Form Pembayaran</h2>
+                        <p class="text-gray-500 dark:text-gray-400">Isi data pembayaran dengan lengkap</p>
                     </div>
                 </div>
 
@@ -53,7 +245,7 @@
                     <!-- Enhanced Customer Info -->
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="form-group">
-                            <label for="customerName" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="customerName" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                 <i class="fas fa-user mr-1"></i>Nama Pelanggan *
                             </label>
                             <input 
@@ -61,16 +253,16 @@
                                 id="customerName"
                                 name="customerName"
                                 placeholder="Masukkan nama lengkap"
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                class="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                                 required
                                 minlength="2"
                                 maxlength="50"
                             >
-                            <div id="customerNameError" class="text-red-500 text-sm mt-1 hidden"></div>
+                            <div id="customerNameError" class="text-red-500 dark:text-red-400 text-sm mt-1 hidden"></div>
                         </div>
 
                         <div class="form-group">
-                            <label for="customerEmail" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="customerEmail" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                 <i class="fas fa-envelope mr-1"></i>Email *
                             </label>
                             <input 
@@ -78,23 +270,23 @@
                                 id="customerEmail"
                                 name="customerEmail"
                                 placeholder="contoh@email.com"
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                class="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                                 required
                             >
-                            <div id="customerEmailError" class="text-red-500 text-sm mt-1 hidden"></div>
+                            <div id="customerEmailError" class="text-red-500 dark:text-red-400 text-sm mt-1 hidden"></div>
                         </div>
                     </div>
 
                     <!-- Enhanced Product Selection -->
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="md:col-span-2">
-                            <label for="productSelect" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="productSelect" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                 <i class="fas fa-box mr-1"></i>Pilih Produk/Layanan *
                             </label>
                             <select 
                                 id="productSelect"
                                 name="product"
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                class="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                                 required
                             >
                                 <option value="">Pilih produk...</option>
@@ -104,11 +296,11 @@
                                 <option value="enterprise" data-price="500000">Paket Enterprise - Rp 500.000</option>
                                 <option value="custom" data-price="0">Custom Package</option>
                             </select>
-                            <div id="productSelectError" class="text-red-500 text-sm mt-1 hidden"></div>
+                            <div id="productSelectError" class="text-red-500 dark:text-red-400 text-sm mt-1 hidden"></div>
                         </div>
 
                         <div>
-                            <label for="quantity" class="block text-sm font-semibold text-gray-700 mb-2">
+                            <label for="quantity" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                 <i class="fas fa-hashtag mr-1"></i>Jumlah *
                             </label>
                             <input 
@@ -118,16 +310,16 @@
                                 min="1"
                                 max="99"
                                 value="1"
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                class="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                                 required
                             >
-                            <div id="quantityError" class="text-red-500 text-sm mt-1 hidden"></div>
+                            <div id="quantityError" class="text-red-500 dark:text-red-400 text-sm mt-1 hidden"></div>
                         </div>
                     </div>
 
                     <!-- Custom Price Input -->
                     <div id="customPriceSection" class="hidden">
-                        <label for="customPrice" class="block text-sm font-semibold text-gray-700 mb-2">
+                        <label for="customPrice" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             <i class="fas fa-dollar-sign mr-1"></i>Harga Custom (Rp)
                         </label>
                         <input 
@@ -137,68 +329,68 @@
                             min="1000"
                             step="1000"
                             placeholder="Masukkan harga custom"
-                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            class="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                         >
                     </div>
 
                     <!-- Enhanced Payment Methods -->
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-4">
+                        <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
                             <i class="fas fa-wallet mr-1"></i>Metode Pembayaran *
                         </label>
                         <div class="grid md:grid-cols-2 gap-4">
-                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-blue-300 transition-all duration-200">
+                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl cursor-pointer hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 bg-white dark:bg-gray-700">
                                 <input type="radio" name="paymentMethod" value="transfer" class="sr-only">
-                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 dark:border-gray-500 mr-3 flex items-center justify-center">
                                     <div class="w-3 h-3 rounded-full bg-blue-600 hidden"></div>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-university text-blue-600 mr-3 text-lg"></i>
-                                    <span class="font-medium">Transfer Bank</span>
+                                    <span class="font-medium text-gray-800 dark:text-white">Transfer Bank</span>
                                 </div>
                             </label>
 
-                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-purple-300 transition-all duration-200">
+                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl cursor-pointer hover:border-purple-300 dark:hover:border-purple-500 transition-all duration-200 bg-white dark:bg-gray-700">
                                 <input type="radio" name="paymentMethod" value="ewallet" class="sr-only">
-                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 dark:border-gray-500 mr-3 flex items-center justify-center">
                                     <div class="w-3 h-3 rounded-full bg-purple-600 hidden"></div>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-mobile-alt text-purple-600 mr-3 text-lg"></i>
-                                    <span class="font-medium">E-Wallet</span>
+                                    <span class="font-medium text-gray-800 dark:text-white">E-Wallet</span>
                                 </div>
                             </label>
 
-                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-orange-300 transition-all duration-200">
+                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl cursor-pointer hover:border-orange-300 dark:hover:border-orange-500 transition-all duration-200 bg-white dark:bg-gray-700">
                                 <input type="radio" name="paymentMethod" value="credit" class="sr-only">
-                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 dark:border-gray-500 mr-3 flex items-center justify-center">
                                     <div class="w-3 h-3 rounded-full bg-orange-600 hidden"></div>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-credit-card text-orange-600 mr-3 text-lg"></i>
-                                    <span class="font-medium">Kartu Kredit</span>
+                                    <span class="font-medium text-gray-800 dark:text-white">Kartu Kredit</span>
                                 </div>
                             </label>
 
-                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-green-300 transition-all duration-200">
+                            <label class="payment-method-card flex items-center p-4 border-2 border-gray-200 dark:border-gray-600 rounded-xl cursor-pointer hover:border-green-300 dark:hover:border-green-500 transition-all duration-200 bg-white dark:bg-gray-700">
                                 <input type="radio" name="paymentMethod" value="cash" class="sr-only">
-                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full border-2 border-gray-300 dark:border-gray-500 mr-3 flex items-center justify-center">
                                     <div class="w-3 h-3 rounded-full bg-green-600 hidden"></div>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-money-bills text-green-600 mr-3 text-lg"></i>
-                                    <span class="font-medium">Bayar Tunai</span>
+                                    <span class="font-medium text-gray-800 dark:text-white">Bayar Tunai</span>
                                 </div>
                             </label>
                         </div>
-                        <div id="paymentMethodError" class="text-red-500 text-sm mt-2 hidden"></div>
+                        <div id="paymentMethodError" class="text-red-500 dark:text-red-400 text-sm mt-2 hidden"></div>
                     </div>
 
                     <!-- Enhanced Promo Section -->
-                    <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-green-200 dark:border-green-700">
                         <div class="flex items-center mb-4">
-                            <i class="fas fa-tags text-green-600 mr-2"></i>
-                            <h3 class="font-semibold text-gray-700">Kode Promo</h3>
+                            <i class="fas fa-tags text-green-600 dark:text-green-400 mr-2"></i>
+                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Kode Promo</h3>
                         </div>
                         <div class="flex gap-3">
                             <input 
@@ -206,7 +398,7 @@
                                 id="promoCode"
                                 name="promoCode"
                                 placeholder="Masukkan kode promo"
-                                class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                                class="flex-1 px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                                 maxlength="20"
                             >
                             <button 
@@ -218,35 +410,35 @@
                             </button>
                         </div>
                         <div id="promoMessage" class="mt-3 text-sm hidden"></div>
-                        <div class="mt-3 text-xs text-gray-500">
+                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">
                             <i class="fas fa-info-circle mr-1"></i>Coba: 
-                            <span class="font-mono bg-white px-2 py-1 rounded">DISKON10</span>, 
-                            <span class="font-mono bg-white px-2 py-1 rounded">HEMAT50K</span>
+                            <span class="font-mono bg-white dark:bg-gray-600 px-2 py-1 rounded">DISKON10</span>, 
+                            <span class="font-mono bg-white dark:bg-gray-600 px-2 py-1 rounded">HEMAT50K</span>
                         </div>
                     </div>
 
                     <!-- Enhanced Total Section -->
-                    <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-6 border-2 border-gray-200">
-                        <h3 class="font-semibold text-gray-700 mb-4 flex items-center">
+                    <div class="bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-600">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-4 flex items-center">
                             <i class="fas fa-calculator mr-2"></i>Ringkasan Pembayaran
                         </h3>
                         <div class="space-y-3">
-                            <div class="flex justify-between items-center text-gray-600">
+                            <div class="flex justify-between items-center text-gray-600 dark:text-gray-400">
                                 <span>Subtotal:</span>
                                 <span id="subtotal" class="font-semibold">Rp 0</span>
                             </div>
-                            <div id="discountRow" class="flex justify-between items-center text-green-600 hidden">
+                            <div id="discountRow" class="flex justify-between items-center text-green-600 dark:text-green-400 hidden">
                                 <span>Diskon:</span>
                                 <span id="discount" class="font-semibold">Rp 0</span>
                             </div>
-                            <div id="taxRow" class="flex justify-between items-center text-gray-500 text-sm">
+                            <div id="taxRow" class="flex justify-between items-center text-gray-500 dark:text-gray-400 text-sm">
                                 <span>Pajak (11%):</span>
                                 <span id="tax">Rp 0</span>
                             </div>
-                            <hr class="border-gray-300">
-                            <div class="flex justify-between items-center text-xl font-bold text-gray-800">
+                            <hr class="border-gray-300 dark:border-gray-600">
+                            <div class="flex justify-between items-center text-xl font-bold text-gray-800 dark:text-white">
                                 <span>Total:</span>
-                                <span id="totalAmount" class="text-blue-600">Rp 0</span>
+                                <span id="totalAmount" class="text-blue-600 dark:text-blue-400">Rp 0</span>
                             </div>
                         </div>
                     </div>
@@ -265,15 +457,15 @@
             </div>
 
             <!-- Enhanced Transaction History -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 animate-slide-up">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 animate-slide-up transition-colors duration-300">
                 <div class="flex items-center justify-between mb-6">
                     <div class="flex items-center">
                         <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center mr-3">
                             <i class="fas fa-history text-white"></i>
                         </div>
                         <div>
-                            <h2 class="text-xl font-bold text-gray-800">Riwayat Transaksi</h2>
-                            <p class="text-sm text-gray-500">Data real-time & tersimpan</p>
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white">Riwayat Transaksi</h2>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Data real-time & tersimpan</p>
                         </div>
                     </div>
                     <div class="flex space-x-2">
@@ -297,17 +489,17 @@
                 <!-- Enhanced Statistics -->
                 <div class="grid grid-cols-1 gap-4 mb-6">
                     <div class="grid grid-cols-3 gap-3">
-                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200">
-                            <div class="text-2xl font-bold text-blue-600" id="totalTransactions">0</div>
-                            <div class="text-xs text-gray-600">Total Transaksi</div>
+                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl border border-blue-200 dark:border-blue-700">
+                            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="totalTransactions">0</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Total Transaksi</div>
                         </div>
-                        <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border border-green-200">
-                            <div class="text-lg font-bold text-green-600" id="totalRevenue">Rp 0</div>
-                            <div class="text-xs text-gray-600">Total Pendapatan</div>
+                        <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-xl border border-green-200 dark:border-green-700">
+                            <div class="text-lg font-bold text-green-600 dark:text-green-400" id="totalRevenue">Rp 0</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Total Pendapatan</div>
                         </div>
-                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200">
-                            <div class="text-lg font-bold text-purple-600" id="avgTransaction">Rp 0</div>
-                            <div class="text-xs text-gray-600">Rata-rata</div>
+                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-xl border border-purple-200 dark:border-purple-700">
+                            <div class="text-lg font-bold text-purple-600 dark:text-purple-400" id="avgTransaction">Rp 0</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Rata-rata</div>
                         </div>
                     </div>
                     
@@ -319,12 +511,12 @@
                                 type="text" 
                                 id="searchTransactions"
                                 placeholder="Cari transaksi..."
-                                class="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                class="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                             >
                         </div>
                         <select 
                             id="filterPaymentMethod"
-                            class="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="px-3 py-2 text-sm border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         >
                             <option value="">Semua Metode</option>
                             <option value="transfer">Transfer Bank</option>
@@ -338,8 +530,8 @@
                 <!-- Transaction List -->
                 <div id="transactionList" class="space-y-3 max-h-96 overflow-y-auto">
                     <!-- Empty State -->
-                    <div id="emptyState" class="text-center py-8 text-gray-500">
-                        <i class="fas fa-receipt text-6xl text-gray-300 mb-4"></i>
+                    <div id="emptyState" class="text-center py-8 text-gray-500 dark:text-gray-400">
+                        <i class="fas fa-receipt text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
                         <p class="font-medium">Belum ada transaksi</p>
                         <p class="text-sm">Lakukan pembayaran pertama Anda!</p>
                     </div>
@@ -350,16 +542,16 @@
 
     <!-- Enhanced Payment Success Modal -->
     <div id="paymentModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
-        <div class="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 animate-slide-up">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-lg w-full mx-4 animate-slide-up">
             <div class="text-center mb-6">
-                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-check-circle text-4xl text-green-600"></i>
+                <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check-circle text-4xl text-green-600 dark:text-green-400"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Pembayaran Berhasil!</h3>
-                <p class="text-gray-600">Transaksi Anda telah diproses dengan aman</p>
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Pembayaran Berhasil!</h3>
+                <p class="text-gray-600 dark:text-gray-300">Transaksi Anda telah diproses dengan aman</p>
             </div>
             
-            <div id="paymentDetails" class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-6 mb-6 text-sm border border-gray-200">
+            <div id="paymentDetails" class="bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-700 dark:to-blue-900/20 rounded-xl p-6 mb-6 text-sm border border-gray-200 dark:border-gray-600">
                 <!-- Detail pembayaran akan ditampilkan di sini -->
             </div>
             
@@ -382,26 +574,27 @@
 
     <!-- Transaction Template -->
     <template id="transactionTemplate">
-        <div class="border-2 border-gray-100 rounded-xl p-4 hover:shadow-lg hover:border-blue-200 transition-all duration-200 animate-slide-up">
+        <div class="border-2 border-gray-100 dark:border-gray-700 rounded-xl p-4 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-200 animate-slide-up bg-white dark:bg-gray-700">
             <div class="flex justify-between items-start mb-3">
                 <div class="flex-1">
-                    <h4 class="font-bold text-gray-800 transaction-customer"></h4>
-                    <p class="text-sm text-gray-600 transaction-product"></p>
-                    <p class="text-xs text-gray-500 transaction-id"></p>
+                    <h4 class="font-bold text-gray-800 dark:text-white transaction-customer"></h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 transaction-product"></p>
+                    <p class="text-xs text-gray-500 dark:text-gray-500 transaction-id"></p>
                 </div>
                 <div class="text-right">
-                    <div class="font-bold text-lg text-green-600 transaction-amount"></div>
-                    <div class="text-xs text-gray-500 transaction-time"></div>
+                    <div class="font-bold text-lg text-green-600 dark:text-green-400 transaction-amount"></div>
+                    <div class="text-xs text-gray-500 dark:text-gray-500 transaction-time"></div>
                 </div>
             </div>
             <div class="flex justify-between items-center">
                 <span class="transaction-method px-3 py-1 rounded-full text-xs font-medium"></span>
-                <span class="transaction-status px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                <span class="transaction-status px-3 py-1 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400">
                     <i class="fas fa-check-circle mr-1"></i>Berhasil
                 </span>
             </div>
         </div>
     </template>
+
     <script src="script.js"></script>
 </body>
 </html>

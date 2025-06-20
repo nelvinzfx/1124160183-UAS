@@ -1,18 +1,618 @@
+/* Dark Mode Custom Styles */
 @keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from { 
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
 }
+
 @keyframes fadeIn {
-  from {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+/* Dark Mode Toggle Animation */
+#darkModeToggle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.1);
+}
+
+#darkModeIcon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Icons */
+.dark #darkModeIcon:before {
+    content: "\f185"; /* sun icon */
+}
+
+/* Smooth transitions for dark mode */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #374151;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #6B7280;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
+}
+
+/* Dark mode notification styles */
+.notification-dark {
+    background: rgba(31, 41, 55, 0.95);
+    color: white;
+    border: 1px solid #374151;
+}
+
+/* Payment method cards dark mode enhancement */
+.dark .payment-method-card:hover {
+    background-color: rgba(55, 65, 81, 0.8);
+}
+
+/* Focus ring enhancement for dark mode */
+.dark input:focus,
+.dark select:focus,
+.dark button:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Animation classes */
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.2s ease-in;
+}
+
+/* Dark mode toggle button special effects */
+#darkModeToggle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark #darkModeToggle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#darkModeToggle:active {
+    transform: scale(0.95);
+}
+
+/* Gradient text enhancement for dark mode */
+.dark .bg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* Form validation error styles for dark mode */
+.dark .border-red-500 {
+    border-color: #EF4444 !important;
+}
+
+.dark .ring-red-500 {
+    --tw-ring-color: #EF4444 !important;
+}
+
+/* Success message styles for dark mode */
+.dark .text-green-600 {
+    color: #10B981 !important;
+}
+
+.dark .text-green-400 {
+    color: #34D399 !important;
+}
+
+/* Custom dark mode variables */
+:root {
+    --dark-bg-primary: #111827;
+    --dark-bg-secondary: #1F2937;
+    --dark-text-primary: #F9FAFB;
+    --dark-text-secondary: #D1D5DB;
+    --dark-border: #374151;
+}
+
+/* Enhanced dark mode components */
+.dark-card {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+.dark-input {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+.dark-input:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 1px #3B82F6;
+}
+
+/* Loading overlay dark mode */
+.dark #loadingOverlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal backdrop enhancement */
+.dark .modal-backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Typography enhancements for dark mode */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: var(--dark-text-primary);
+}
+
+.dark p, .dark span {
+    color: var(--dark-text-secondary);
+}
+
+/* Button hover effects for dark mode */
+.dark button:hover {
+    transform: translateY(-1px);
+}
+
+/* Stats cards enhancement */
+.dark .stats-card {
+    background: linear-gradient(135deg, var(--dark-bg-secondary) 0%, rgba(55, 65, 81, 0.8) 100%);
+    border: 1px solid var(--dark-border);
+}
+
+/* Transaction list enhancements */
+.dark .transaction-item {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+}
+
+.dark .transaction-item:hover {
+    border-color: #3B82F6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+/* Enhanced Header Styles */
+.nav-link {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile Navigation */
+.mobile-nav-link {
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    transform: translateX(4px);
+}
+
+/* Dark Mode Toggle Enhancement */
+#darkModeToggle {
+    position: relative;
+    overflow: hidden;
+}
+
+#darkModeToggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#darkModeToggle:hover::before {
+    width: 120%;
+    height: 120%;
+}
+
+/* Tooltip Animation */
+#darkModeToggle .tooltip {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(4px);
+}
+
+#darkModeToggle:hover .tooltip {
+    transform: translateY(0);
+}
+
+/* Header Background Effects */
+header nav {
+    position: relative;
+    overflow: hidden;
+}
+
+header nav::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+}
+
+/* Hero Section Animations */
+.hero-badge {
+    animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
-  }
-  to {
+    transform: translateY(20px);
+}
+
+.hero-badge:nth-child(1) { animation-delay: 0.1s; }
+.hero-badge:nth-child(2) { animation-delay: 0.2s; }
+.hero-badge:nth-child(3) { animation-delay: 0.3s; }
+.hero-badge:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Quick Stats Animation */
+.stats-card {
+    transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .stats-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Status Indicator Animation */
+.status-indicator {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Mobile Menu Slide Animation */
+#mobileMenu {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top;
+}
+
+#mobileMenu.hidden {
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+#mobileMenu:not(.hidden) {
+    transform: scaleY(1);
     opacity: 1;
-  }
+}
+
+/* Enhanced Backdrop Blur */
+.backdrop-blur-header {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Dark Mode Specific Enhancements */
+.dark header nav {
+    background: rgba(31, 41, 55, 0.85);
+    border-color: rgba(75, 85, 99, 0.6);
+}
+
+.dark .hero-section {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(139, 92, 246, 0.1) 50%, 
+        rgba(99, 102, 241, 0.1) 100%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header nav {
+        padding: 1rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .feature-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header nav,
+    #darkModeToggle,
+    #mobileMenuToggle {
+        display: none !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .nav-link {
+        border: 1px solid transparent;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        border-color: currentColor;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .nav-link::after,
+    #darkModeToggle::before,
+    .hero-badge,
+    .stats-card {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Enhanced Image Styles */
+.campus-image-container {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.campus-image-container:hover {
+    transform: scale(1.05);
+}
+
+.campus-image-container img {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.dark .campus-image-container img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.profile-image-container {
+    position: relative;
+}
+
+.profile-image-container::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    background: #10B981;
+    border: 2px solid white;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.dark .profile-image-container::after {
+    border-color: #374151;
+}
+
+/* Image Loading Animation */
+.campus-image-container img,
+.profile-image-container img {
+    opacity: 0;
+    animation: fadeInImage 0.5s ease-out forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Profile Dropdown Effect */
+.profile-image-container {
+    cursor: pointer;
+    position: relative;
+}
+
+.profile-image-container:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dark .profile-image-container:hover img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Institution Branding Enhancement */
+.institution-header {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.05) 0%, 
+        rgba(139, 92, 246, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .institution-header {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile Profile Header Enhancement */
+.mobile-profile-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .mobile-profile-header {
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Image Error Handling */
+img[src*="base64"] {
+    background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+    border-radius: inherit;
+}
+
+.dark img[src*="base64"] {
+    background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+}
+
+/* Navigation Enhancement with Images */
+nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark nav {
+    background: rgba(31, 41, 55, 0.9);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Responsive Image Adjustments */
+@media (max-width: 768px) {
+    .campus-image-container img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .profile-image-container img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .institution-header img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Print Styles for Images */
+@media print {
+    .campus-image-container,
+    .profile-image-container {
+        display: none !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .campus-image-container img,
+    .profile-image-container img {
+        border-width: 3px;
+        border-color: currentColor;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .campus-image-container:hover,
+    .profile-image-container:hover img,
+    .campus-image-container img,
+    .profile-image-container img {
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Loading State for Images */
+.image-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.dark .image-loading {
+    background: linear-gradient(90deg, #374151 25%, transparent 37%, #374151 63%);
+    background-size: 400% 100%;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+/* Image Accessibility */
+img[alt] {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px;
+    background: #f3f4f6;
+    border: 1px dashed #d1d5db;
+    color: #6b7280;
+}
+
+.dark img[alt] {
+    background: #374151;
+    border-color: #4b5563;
+    color: #9ca3af;
 }
