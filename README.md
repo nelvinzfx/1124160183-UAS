@@ -4,7 +4,7 @@
 
 ![Global Institute Logo](assets/icon/global-institute.png)
 
-**Modern Payment System**
+**Modern Payment System Application**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
@@ -99,7 +99,7 @@
 ## 🔗 Demo & Links
 
 ### Live Demo
-- Link : ![Demo](https://uas-ltnwi.kinsta.page/)
+- Link : https://uas-ltnwi.kinsta.page/
 
 ---
 
