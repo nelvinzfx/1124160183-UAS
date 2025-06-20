@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Global Institute Logo](assets/icon/global-university.png)
+![Global Institute Logo](assets/icon/global-institute.png)
 
 **Modern Payment System untuk Global Institute**
 
@@ -22,8 +22,6 @@
 
 - [Tentang Aplikasi](#-tentang-aplikasi)
 - [Fitur Utama](#-fitur-utama)
-- [Teknologi yang Digunakan](#️-teknologi-yang-digunakan)
-- [Struktur File](#-struktur-file)
 ---
 
 ## 🚀 Tentang Aplikasi
@@ -82,33 +80,5 @@
 - **Loading States**: Loading states untuk UX yang lebih baik
 - **Notification System**: Sistem notifikasi toast yang elegant
 - **Keyboard Shortcuts**: Dukungan keyboard shortcuts
-
----
-
-## 🛠️ Teknologi yang Digunakan
-
-### Frontend
-{
-"Frontend": {
-"HTML5": "Semantic markup",
-"CSS3": "Modern styling + custom properties",
-"JavaScript": "ES6+ vanilla JS dengan class architecture",
-"TailwindCSS": "Utility-first CSS framework",
-"Font Awesome": "Icon library"
-},
-"Browser Support": ["Chrome 90+", "Firefox 88+", "Safari 14+", "Edge 90+"]
-}
----
-
-## 📁 Struktur File
-modern-payment-system/
-├── assets/icon/
-│ ├── global-university.png
-│ └── profile.png
-├── index.html
-├── script.js
-├── styles.css
-├── tailwind.config.js
-└── README.md
 
 ---
